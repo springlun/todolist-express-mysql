@@ -57,13 +57,13 @@ exports.updateUser = async (req, res) => {
             }
         }
 
-        const updatedUser = await User.update(userId, {
+        const updateUser = await User.update(userId, {
             username: username || existingUser.name,
             email: email || existingUser.email,
             password: password || existingUser.password,
         })
 
-        res.json(updatedUser)
+        res.json(updateUser)
     } catch (error) {
         res.status(500).json({ error: "更新用户失败" })
     }

@@ -3,6 +3,7 @@ const cors = require("cors")
 const path = require("path")
 
 const userRoutes = require("./routes/userRoutes")
+const taskRoutes = require("./routes/taskRoutes")
 const { PORT } = require("./config/env")
 
 const app = express()
@@ -21,6 +22,8 @@ app.use((req, res, next) => {
 
 // 用户路由
 app.use("/api/users", userRoutes)
+// 用户路由
+app.use("/api/tasks", taskRoutes)
 
 // 404 处理
 app.use((req, res) => {
@@ -30,4 +33,5 @@ app.use((req, res) => {
 app.listen(PORT, () => {
     console.log(`🚀 服务器运行在 http://localhost:${PORT}`)
     console.log(`📝 用户API地址: http://localhost:${PORT}/api/users`)
+    console.log(`📝 任务API地址: http://localhost:${PORT}/api/tasks`)
 })

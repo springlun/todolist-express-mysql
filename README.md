@@ -1,7 +1,7 @@
 # 项目说明
 
-该项目使用 express 框架 + MySQL 数据库，对用户表实现增删改查操作
-运行前请先将目录中的 users.sql 文件导入数据库，然后项目中安装：
+该项目使用 express 框架 + MySQL 数据库，对 用户表以及任务表 实现增删改查操作
+运行前请先将目录中的 .sql 文件导入数据库，然后项目中安装：
 - express
 - mysql2
 - cors
@@ -20,14 +20,17 @@ todolist-express-mysql/
 ├── controllers/
 
 │  └── userController.js   # 用户控制器
+│  └── taskController.js   # 任务控制器
 
 ├── models/
 
 │  └── userModel.js          # 用户模型
+│  └── taskModel.js          # 任务模型
 
 ├── routes/
 
 │  └── userRoutes.js        # 用户路由
+│  └── taskRoutes.js        # 任务路由
 
 ├── app.js                         # 主应用文件
 
@@ -36,9 +39,11 @@ todolist-express-mysql/
 └── README.md
 
 └── users.sql                  # 数据库文件
-
+└── tasks.sql                  # 数据库文件
 
 # API说明
+
+关于用户
 
 | 方法   | 路径           | 描述         |
 | ------ | -------------- | ------------ |
@@ -48,5 +53,15 @@ todolist-express-mysql/
 | PUT    | /api/users/:id | 更新用户信息 |
 | DELETE | /api/users/:id | 删除用户     |
 
+关于任务
+
+| 方法   | 路径           | 描述         |
+| ------ | -------------- | ------------ |
+| GET    | /api/tasks     | 获取所有任务 |
+| GET    | /api/tasks/:id | 获取单个任务 |
+| POST   | /api/tasks     | 创建新任务   |
+| PUT    | /api/tasks/:id | 更新任务     |
+| DELETE | /api/tasks/:id | 删除任务     |
+
 # 数据库
-用户 ID 采用字符串格式
+ID 采用字符串格式
