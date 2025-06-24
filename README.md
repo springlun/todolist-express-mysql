@@ -1,6 +1,11 @@
 # 项目说明
 
 该项目使用 express 框架 + MySQL 数据库，对用户表实现增删改查操作
+运行前请先将目录中的 users.sql 文件导入数据库，然后项目中安装：
+- express
+- mysql2
+- cors
+- nanoid
 
 # 项目结构
 
@@ -55,3 +60,4 @@ DELETE  /api/users/:id  删除用户
 | DELETE | /api/users/:id | 删除用户     |
 
 # 数据库
+用户 ID 采用字符串格式
