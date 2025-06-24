@@ -4,6 +4,7 @@ const path = require("path")
 
 const userRoutes = require("./routes/userRoutes")
 const taskRoutes = require("./routes/taskRoutes")
+const tagRoutes = require("./routes/tagRoutes")
 const { PORT } = require("./config/env")
 
 const app = express()
@@ -22,8 +23,10 @@ app.use((req, res, next) => {
 
 // 用户路由
 app.use("/api/users", userRoutes)
-// 用户路由
+// 任务路由
 app.use("/api/tasks", taskRoutes)
+// tag路由
+app.use("/api/tags", tagRoutes)
 
 // 404 处理
 app.use((req, res) => {
@@ -34,4 +37,5 @@ app.listen(PORT, () => {
     console.log(`🚀 服务器运行在 http://localhost:${PORT}`)
     console.log(`📝 用户API地址: http://localhost:${PORT}/api/users`)
     console.log(`📝 任务API地址: http://localhost:${PORT}/api/tasks`)
+    console.log(`📝 tagAPI地址: http://localhost:${PORT}/api/tags`)
 })
